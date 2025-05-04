@@ -8,8 +8,8 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 
 if (!accountSid || !authToken) {
+    console.log(accountSid, authToken)
     console.error("❌ Twilio credentials are missing. Please set them in the .env file.");
-    process.exit(1);
 }
 
 const client = new twilio(accountSid, authToken);
@@ -23,6 +23,7 @@ const fromNumber = "whatsapp:+14155238886";
 
 // Function to send WhatsApp messages with rate limiting (1 RPS)
 async function sendWhatsAppMessages(message) {
+    console.log(message)
     console.log("⏳ Sending WhatsApp messages with rate limiting...");
 
     for (const toNumber of recipients) {

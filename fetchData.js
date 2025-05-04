@@ -1,6 +1,6 @@
-const axios = require('axios');
-const { CookieJar } = require('tough-cookie');
-const { wrapper } = require('axios-cookiejar-support');
+import axios from 'axios';
+import { CookieJar } from 'tough-cookie';
+import { wrapper } from 'axios-cookiejar-support';
 
 
 async function runChartinkScan() {
@@ -50,7 +50,7 @@ async function getZerodhaMarginMTF() {
     return res.data;
 }
 
-module.exports = {
+export {
     runChartinkScan,
     getZerodhaMarginMTF
 }

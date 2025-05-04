@@ -4,8 +4,10 @@ import qs from "qs";
 import dotenv from "dotenv";
 dotenv.config();
 async function getStocksFromChartink() {
-  const browser = await puppeteer.launch({ headless: true });
-  const page = await browser.newPage();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });  const page = await browser.newPage();
   await page.goto("https://chartink.com/login", { waitUntil: 'networkidle2' });
 
   // Fill in credentials
