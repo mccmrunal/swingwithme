@@ -2,7 +2,7 @@ name: Zerodha Cron Job
 on:
   schedule:
     # This schedule runs every day at 20:40 IST (15:10 UTC)
-    - cron: '*/5 * * * *' 
+    - cron: '10 15 * * *'
   workflow_dispatch: 
 jobs:
   run-script:
